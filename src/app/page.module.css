@@ -84,7 +84,7 @@
   border: none;
   padding: 18px 10px;
   display: flex;
-  flex-direction: column;   /* icon upar, text niche */
+  flex-direction: column;   
   align-items: center;
   justify-content: center;
   gap: 8px;
@@ -122,7 +122,7 @@
   color: #c4161c;
 }
 
-/* Active Tab (Land Mobility jaisa red box) */
+
 .marketButton.active {
   background: #c4161c;
 }
@@ -132,9 +132,77 @@
 }
 
 .marketButton.active .marketIcon img {
-  filter: brightness(0) invert(1); /* icon white ho jayega */
+  filter: brightness(0) invert(1);
 }
 
 .activeIndicator {
-  display: none; /* dot ki zarurat nahi */
+  display: none; 
+}
+
+
+@media (max-width: 1024px) {
+  .container {
+    padding: 0 30px;
+  }
+
+  .marketsContent {
+    flex-direction: column;
+    gap: 40px;
+    text-align: center;
+  }
+
+  .descriptionColumn {
+    max-width: 100%;
+  }
+
+  .imageColumn {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .title {
+    font-size: 36px;
+  }
+
+  .statsNumber {
+    font-size: 48px;
+  }
+
+  .marketsNav {
+    flex-wrap: wrap;
+  }
+
+  .marketItem {
+    flex: 0 0 50%;
+    border-bottom: 1px solid #eee;
+  }
+
+  .marketButton {
+    border-right: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 0 20px;
+  }
+
+  .title {
+    font-size: 28px;
+  }
+
+  .descriptionText {
+    font-size: 14px;
+  }
+
+  .statsNumber {
+    font-size: 40px;
+  }
+
+  .marketItem {
+    flex: 0 0 100%; 
+  }
 }

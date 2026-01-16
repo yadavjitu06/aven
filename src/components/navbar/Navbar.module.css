@@ -15,12 +15,6 @@
   transition: all 0.3s ease;
 }
 
-/* When scrolled, add white background with blur */
-/* .header.scrolled {
-  background: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(15px);
-  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
-} */
 
 .navbar {
   padding-top:30px;
@@ -38,10 +32,10 @@
 
 /* Logo Styles */
 .logoContainer {
-display: inline-block;   /* 🔥 IMPORTANT */
+/* display: inline-block;    */
   padding-top: 30px;
   padding-bottom: 25px;
-  /* padding-left: 184px; */
+  
   padding-left: 50px;
 }
 
@@ -253,5 +247,53 @@ display: inline-block;   /* 🔥 IMPORTANT */
   
   .menuButton {
     color: #FFFFFF;
+  }
+}
+
+
+@media (max-width: 600px) {
+  .logo {
+    width: 200px;
+    height: auto;
+  }
+
+  .logoContainer {
+    padding-left: 10px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+
+  .navbar {
+    padding-top: 15px;
+    padding-bottom: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo {
+    width: 170px;
+  }
+
+  .menuButton {
+    width: 40px;
+    height: 40px;
+  }
+
+  .mobileNav {
+    width: 260px;
+  }
+
+  .mobileNavContent {
+    padding: 5rem 1.5rem 2rem;
+  }
+}
+
+@media (max-width: 360px) {
+  .logo {
+    width: 150px;
+  }
+
+  .mobileNav {
+    width: 240px;
   }
 }

@@ -254,3 +254,35 @@
     height: 10px;
   }
 }
+
+
+
+@media (max-width: 600px) {
+  .dotsContainer {
+    padding-left: 2rem;
+    justify-content: center;
+  }
+
+  .contentWrapper {
+    text-align: center;
+  }
+
+  .slideSubtitle {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 360px) {
+  .slideTitle {
+    font-size: 1.5rem;
+  }
+
+  .slideSubtitle {
+    font-size: 0.95rem;
+  }
+
+  .dotsContainer {
+    bottom: 1rem;
+    gap: 0.5rem;
+  }
+}
