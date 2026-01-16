@@ -1,0 +1,140 @@
+.marketsSection {
+  padding: 120px 0 60px;
+  background: #ffffff;
+}
+
+.container {
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 0 60px;
+}
+
+.sectionHeader {
+  margin-bottom: 40px;
+}
+
+.tag {
+  color: #ff6a00;
+  font-size: 14px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.title {
+  font-size: 48px;
+  font-weight: 700;
+  color: #000;
+}
+
+.marketsContent {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.descriptionColumn {
+  max-width: 480px;
+}
+
+.descriptionText {
+  font-size: 15px;
+  line-height: 1.7;
+  color: #666;
+}
+
+.statsBox {
+  margin-top: 40px;
+}
+
+.statsNumber {
+  font-size: 64px;
+  font-weight: 700;
+  color: #ff6a00;
+}
+
+.statsLabel {
+  font-size: 14px;
+  letter-spacing: 1px;
+  color: #888;
+}
+
+.imageColumn {
+  flex-shrink: 0;
+}
+
+/* Bottom Tabs (Icons row style layout) */
+.marketsNav {
+  display: flex;
+  align-items: center;
+  border-top: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+  margin-top: 40px;
+}
+
+.marketItem {
+  list-style: none;
+  flex: 1;
+}
+
+.marketButton {
+  width: 100%;
+  background: transparent;
+  border: none;
+  padding: 18px 10px;
+  display: flex;
+  flex-direction: column;   /* icon upar, text niche */
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border-right: 1px solid #eee;
+}
+
+.marketItem:last-child .marketButton {
+  border-right: none;
+}
+
+.marketIcon {
+  width: 26px;
+  height: 26px;
+}
+
+.marketIcon img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  filter: grayscale(100%) opacity(0.6);
+  transition: 0.3s;
+}
+
+.marketText {
+  font-size: 13px;
+  color: #888;
+  font-weight: 500;
+}
+
+.marketButton:hover .marketIcon img,
+.marketButton:hover .marketText {
+  filter: none;
+  color: #c4161c;
+}
+
+/* Active Tab (Land Mobility jaisa red box) */
+.marketButton.active {
+  background: #c4161c;
+}
+
+.marketButton.active .marketText {
+  color: #fff;
+}
+
+.marketButton.active .marketIcon img {
+  filter: brightness(0) invert(1); /* icon white ho jayega */
+}
+
+.activeIndicator {
+  display: none; /* dot ki zarurat nahi */
+}

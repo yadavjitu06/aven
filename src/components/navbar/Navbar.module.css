@@ -1,0 +1,257 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  
+  /* Change to transparent background */
+  background: transparent;
+  backdrop-filter: none; /* Remove blur */
+  
+  border: none;
+  box-shadow: none;
+  
+  transition: all 0.3s ease;
+}
+
+/* When scrolled, add white background with blur */
+/* .header.scrolled {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(15px);
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+} */
+
+.navbar {
+  padding-top:30px;
+  padding-bottom: 25px;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Logo Styles */
+.logoContainer {
+display: inline-block;   /* 🔥 IMPORTANT */
+  padding-top: 30px;
+  padding-bottom: 25px;
+  /* padding-left: 184px; */
+  padding-left: 50px;
+}
+
+.logo {
+  
+  width: 300px;
+  height: 90px;
+}
+
+
+
+
+
+
+/* Desktop Navigation */
+.desktopNav {
+  display: none;
+}
+
+.navList {
+  display: flex;
+  gap: 2.5rem;
+  list-style: none;
+  /* margin: 0;
+  padding: 0; */
+}
+
+.navItem {
+  position: relative;
+}
+
+/* Change nav links to white for transparent background */
+.navLink {
+  text-decoration: none;
+  
+  font-weight: 500;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+  position: relative;
+  padding: 0.5rem 0;
+
+
+  text-align: left;
+  font: normal normal medium 20px/30px Exo;
+  letter-spacing: 0px;
+  color: #ffffff;
+  opacity: 1;
+}
+
+/* On scroll, change to dark */
+.header.scrolled .navLink {
+  color: #555;
+}
+
+.navLink:hover {
+  color: #007bff;
+}
+
+.navLink.active {
+  color: #007bff;
+}
+
+.navLink.active::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background-color: #007bff;
+  border-radius: 1px;
+}
+
+/* Mobile Menu Button */
+.menuButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #FFFFFF; /* White on transparent */
+  transition: color 0.3s ease;
+  z-index: 1002;
+}
+
+/* On scroll, change to dark */
+.header.scrolled .menuButton {
+  color: #333;
+}
+
+.menuButton:hover {
+  color: #007bff;
+}
+
+/* Mobile Navigation */
+.mobileNav {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 300px;
+  height: 100vh;
+  background: white;
+  z-index: 1001;
+  transition: right 0.3s ease;
+  box-shadow: -5px 0 25px rgba(0, 0, 0, 0.1);
+}
+
+.mobileNav.open {
+  right: 0;
+}
+
+.mobileNavContent {
+  padding: 6rem 2rem 2rem;
+  height: 100%;
+  overflow-y: auto;
+}
+
+.mobileNavList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.mobileNavItem {
+  opacity: 0;
+  transform: translateX(20px);
+  transition: all 0.3s ease;
+}
+
+.mobileNav.open .mobileNavItem {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.mobileNav.open .mobileNavItem:nth-child(1) { transition-delay: 0.1s; }
+.mobileNav.open .mobileNavItem:nth-child(2) { transition-delay: 0.15s; }
+.mobileNav.open .mobileNavItem:nth-child(3) { transition-delay: 0.2s; }
+.mobileNav.open .mobileNavItem:nth-child(4) { transition-delay: 0.25s; }
+.mobileNav.open .mobileNavItem:nth-child(5) { transition-delay: 0.3s; }
+
+.mobileNavLink {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  font-size: 1.125rem;
+  display: block;
+  padding: 0.5rem 0;
+  transition: color 0.3s ease;
+}
+
+.mobileNavLink:hover {
+  color: #007bff;
+}
+
+.mobileNavLink.active {
+  color: #007bff;
+}
+
+/* Mobile Overlay */
+.mobileOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+  display: none;
+}
+
+/* Responsive Styles */
+@media (min-width: 768px) {
+  .desktopNav {
+    display: block;
+  }
+  
+  .menuButton {
+    display: none;
+  }
+  
+  .mobileNav {
+    display: none;
+  }
+  
+  .mobileOverlay {
+    display: none;
+  }
+}
+
+@media (max-width: 767px) {
+  .mobileOverlay {
+    display: block;
+  }
+  
+  .container {
+    padding: 0 1rem;
+  }
+  
+  /* On mobile, always show white text if navbar is transparent */
+  .logoText {
+    color: #FFFFFF;
+  }
+  
+  .menuButton {
+    color: #FFFFFF;
+  }
+}
