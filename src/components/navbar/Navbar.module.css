@@ -1,115 +1,42 @@
+/* ================= MOBILE FIRST BASE ================= */
+
 .header {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   z-index: 1000;
-  
-  /* Change to transparent background */
   background: transparent;
-  backdrop-filter: none; /* Remove blur */
-  
   border: none;
   box-shadow: none;
-  
   transition: all 0.3s ease;
 }
 
-
 .navbar {
-  padding-top:30px;
-  padding-bottom: 25px;
+  padding: 12px 0;
 }
 
 .container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 1.5rem;
+  width: 100%;
+  padding: 0 1rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-/* Logo Styles */
-.logoContainer {
-/* display: inline-block;    */
-  padding-top: 30px;
-  padding-bottom: 25px;
-  
-  padding-left: 50px;
-}
+
 
 .logo {
-  
-  width: 300px;
-  height: 90px;
+  width: 160px;
+  height: auto;
 }
 
-
-
-
-
-
-/* Desktop Navigation */
+/* Desktop nav hidden on mobile */
 .desktopNav {
   display: none;
 }
 
-.navList {
-  display: flex;
-  gap: 2.5rem;
-  list-style: none;
-  /* margin: 0;
-  padding: 0; */
-}
-
-.navItem {
-  position: relative;
-}
-
-/* Change nav links to white for transparent background */
-.navLink {
-  text-decoration: none;
-  
-  font-weight: 500;
-  font-size: 1rem;
-  transition: color 0.3s ease;
-  position: relative;
-  padding: 0.5rem 0;
-
-
-  text-align: left;
-  font: normal normal medium 20px/30px Exo;
-  letter-spacing: 0px;
-  color: #ffffff;
-  opacity: 1;
-}
-
-/* On scroll, change to dark */
-.header.scrolled .navLink {
-  color: #555;
-}
-
-.navLink:hover {
-  color: #007bff;
-}
-
-.navLink.active {
-  color: #007bff;
-}
-
-.navLink.active::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 2px;
-  background-color: #007bff;
-  border-radius: 1px;
-}
-
-/* Mobile Menu Button */
+/* Hamburger Button */
 .menuButton {
   display: flex;
   align-items: center;
@@ -119,31 +46,27 @@
   background: none;
   border: none;
   cursor: pointer;
-  color: #FFFFFF; /* White on transparent */
-  transition: color 0.3s ease;
+  color: #ffffff;
+  transition: transform 0.2s ease, color 0.3s ease;
   z-index: 1002;
 }
 
-/* On scroll, change to dark */
-.header.scrolled .menuButton {
-  color: #333;
+.menuButton:active {
+  transform: scale(0.9);
 }
 
-.menuButton:hover {
-  color: #007bff;
-}
-
-/* Mobile Navigation */
+/* Mobile Drawer */
 .mobileNav {
   position: fixed;
   top: 0;
   right: -100%;
-  width: 300px;
+  width: 80%;
+  max-width: 320px;
   height: 100vh;
-  background: white;
+  background: #ffffff;
   z-index: 1001;
-  transition: right 0.3s ease;
-  box-shadow: -5px 0 25px rgba(0, 0, 0, 0.1);
+  transition: right 0.35s ease;
+  box-shadow: -5px 0 25px rgba(0, 0, 0, 0.15);
 }
 
 .mobileNav.open {
@@ -151,18 +74,18 @@
 }
 
 .mobileNavContent {
-  padding: 6rem 2rem 2rem;
+  padding: 5rem 1.5rem 2rem;
   height: 100%;
   overflow-y: auto;
 }
 
 .mobileNavList {
   list-style: none;
-  margin: 0;
   padding: 0;
+  margin: 0;
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  gap: 1.25rem;
 }
 
 .mobileNavItem {
@@ -176,19 +99,11 @@
   transform: translateX(0);
 }
 
-.mobileNav.open .mobileNavItem:nth-child(1) { transition-delay: 0.1s; }
-.mobileNav.open .mobileNavItem:nth-child(2) { transition-delay: 0.15s; }
-.mobileNav.open .mobileNavItem:nth-child(3) { transition-delay: 0.2s; }
-.mobileNav.open .mobileNavItem:nth-child(4) { transition-delay: 0.25s; }
-.mobileNav.open .mobileNavItem:nth-child(5) { transition-delay: 0.3s; }
-
 .mobileNavLink {
   text-decoration: none;
   color: #333;
   font-weight: 500;
-  font-size: 1.125rem;
-  display: block;
-  padding: 0.5rem 0;
+  font-size: 1.1rem;
   transition: color 0.3s ease;
 }
 
@@ -200,100 +115,105 @@
   color: #007bff;
 }
 
-/* Mobile Overlay */
+/* Overlay */
 .mobileOverlay {
   position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
+  inset: 0;
   background: rgba(0, 0, 0, 0.5);
   z-index: 1000;
-  display: none;
 }
 
-/* Responsive Styles */
+/* ================= TABLET & DESKTOP ================= */
+
 @media (min-width: 768px) {
   .desktopNav {
     display: block;
   }
-  
+
   .menuButton {
     display: none;
   }
-  
-  .mobileNav {
-    display: none;
-  }
-  
-  .mobileOverlay {
-    display: none;
-  }
-}
 
-@media (max-width: 767px) {
+  .mobileNav,
   .mobileOverlay {
-    display: block;
+    display: none;
   }
-  
+
   .container {
-    padding: 0 1rem;
+    max-width: 1200px;
+    margin: 0 auto;
   }
-  
-  /* On mobile, always show white text if navbar is transparent */
-  .logoText {
-    color: #FFFFFF;
-  }
-  
-  .menuButton {
-    color: #FFFFFF;
-  }
-}
 
-
-@media (max-width: 600px) {
   .logo {
-    width: 200px;
-    height: auto;
-  }
-
-  .logoContainer {
-    padding-left: 10px;
-    padding-top: 20px;
-    padding-bottom: 20px;
-  }
-
-  .navbar {
-    padding-top: 15px;
-    padding-bottom: 15px;
-  }
-}
-
-@media (max-width: 480px) {
-  .logo {
-    width: 170px;
-  }
-
-  .menuButton {
-    width: 40px;
-    height: 40px;
-  }
-
-  .mobileNav {
     width: 260px;
   }
 
-  .mobileNavContent {
-    padding: 5rem 1.5rem 2rem;
+  .navList {
+    display: flex;
+    gap: 2.5rem;
+    list-style: none;
+  }
+
+  .navItem {
+    position: relative;
+  }
+
+  .navLink {
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1rem;
+    padding: 0.5rem 0;
+    color: #ffffff;
+    transition: color 0.3s ease;
+  }
+
+  .header.scrolled .navLink {
+    color: #555;
+  }
+
+  .navLink:hover {
+    color: #007bff;
+  }
+
+  .navLink.active {
+    color: #007bff;
+  }
+
+  .navLink.active::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 2px;
+    background: #007bff;
+    border-radius: 1px;
   }
 }
 
-@media (max-width: 360px) {
+/* ================= LARGE DESKTOP ================= */
+
+@media (min-width: 1200px) {
   .logo {
-    width: 150px;
+    width: 300px;
   }
 
-  .mobileNav {
-    width: 240px;
+  .navbar {
+    padding: 20px 0;
   }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

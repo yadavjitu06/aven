@@ -25,7 +25,7 @@ const HeroSlider = () => {
     },
     {
       id: 3,
-      image: '/images/slider/slide3.jpg',
+      image: '/images/slider/slide3.png',
       alt: 'Patient Care Excellence',
       title: 'COMPASSIONATE PATIENT CARE',
       subtitle: 'Dedicated to exceptional healthcare services',

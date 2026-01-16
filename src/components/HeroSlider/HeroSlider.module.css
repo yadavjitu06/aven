@@ -9,8 +9,6 @@
   /* Slider should start from top */
 }
 
-
-
 .sliderWrapper {
   position: relative;
   width: 100%;
@@ -25,7 +23,9 @@
   height: 100%;
   opacity: 0;
   transform: translate3d(100%, 0, 0);
-  transition: transform 1.2s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.6s ease;
+  transition:
+    transform 1.2s cubic-bezier(0.22, 1, 0.36, 1),
+    opacity 0.6s ease;
   will-change: transform, opacity;
 }
 
@@ -39,7 +39,8 @@
 }
 
 .imageContainer {
-  position: relative;
+    object-fit: cover;
+  object-position: center;
   width: 100%;
   height: 100%;
 }
@@ -47,6 +48,8 @@
 .slideImage {
   object-fit: cover;
   object-position: center;
+  width: 100%;
+  height: 100%;
   transition: transform 1.2s ease-out;
 }
 
@@ -75,7 +78,7 @@
   bottom: 0;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-end; /* Yeh change karein - right side ke liye */
   z-index: 2;
   padding: 2rem;
 }
@@ -83,9 +86,13 @@
 .contentWrapper {
   max-width: 1200px;
   width: 100%;
-   padding: 0 2rem; 
+  padding: 0 2rem;
   /* Add margin-top to push content below navbar */
-   margin-top: 100px; 
+  margin-top: 100px;
+
+  text-align: right; /* Yeh change karein - right align ke liye */
+  margin-left: 6rem; /* Yeh change karein - margin-right se margin-left mein */
+  margin-right: 0; /* Yeh remove karein */
 }
 
 .slideTitle {
@@ -98,6 +105,13 @@
   opacity: 0;
   transform: translateY(30px);
   transition: all 0.6s ease 0.3s;
+  margin-left: auto; /* Yeh add karein for right alignment */
+  text-align: right; /* Yeh add karein */
+}
+
+.slideTitle,
+.slideSubtitle {
+  max-width: 520px; /* image jaisa block */
 }
 
 .slide.active .slideTitle {
@@ -113,14 +127,14 @@
   opacity: 0;
   transform: translateY(30px);
   transition: all 0.6s ease 0.5s;
+  margin-left: auto; /* Yeh add karein for right alignment */
+  text-align: right; /* Yeh add karein */
 }
 
 .slide.active .slideSubtitle {
   opacity: 1;
   transform: translateY(0);
 }
-
-
 
 /* Dots Navigation */
 .dotsContainer {
@@ -132,7 +146,8 @@
   justify-content:start;
   gap: 0.75rem;
   z-index: 10;
- padding-left: 11.25rem;
+  padding-right: 0; 
+  padding-left: 11.25rem; 
   padding-bottom: 1.375rem;
 }
 
@@ -162,22 +177,17 @@
   .slideTitle {
     font-size: 2.75rem;
   }
-  
+
   .slideSubtitle {
     font-size: 1.25rem;
   }
-  
+
   .contentWrapper {
     margin-top: 100px;
   }
-  
-  .arrow {
-    width: 50px;
-    height: 50px;
-  }
-  
-  .arrowIcon {
-    font-size: 2rem;
+
+  .dotsContainer {
+    padding-right: 8rem; /* Adjust for tablet */
   }
 }
 
@@ -186,35 +196,44 @@
     height: 80vh;
     min-height: 500px;
   }
-  
+
   .slideTitle {
     font-size: 2.25rem;
   }
-  
+
   .slideSubtitle {
     font-size: 1.125rem;
   }
-  
+
   .contentWrapper {
     margin-top: 90px;
     padding: 0 1rem;
+    margin-left: 4rem; /* Adjust for mobile */
   }
-  
-  .arrow {
-    width: 45px;
-    height: 45px;
-  }
-  
-  .arrowPrev {
-    left: 1rem;
-  }
-  
-  .arrowNext {
-    right: 1rem;
-  }
-  
+
   .dotsContainer {
     bottom: 1.5rem;
+    padding-right: 5rem; /* Adjust for mobile */
+  }
+}
+
+@media (max-width: 600px) {
+  .dotsContainer {
+    padding-right: 2rem; /* Yeh change karein */
+    justify-content: center; /* Ya phir 'end' rakh sakte hain */
+  }
+
+  .contentWrapper {
+    text-align: center; /* Mobile par center kar sakte hain */
+    margin-left: auto; /* Center alignment ke liye */
+    margin-right: auto; /* Center alignment ke liye */
+  }
+
+  .slideTitle,
+  .slideSubtitle {
+    text-align: center; /* Mobile par center */
+    margin-left: auto;
+    margin-right: auto;
   }
 }
 
@@ -223,52 +242,30 @@
     height: 70vh;
     min-height: 400px;
   }
-  
+
   .slideTitle {
     font-size: 1.75rem;
   }
-  
+
   .slideSubtitle {
     font-size: 1rem;
   }
-  
+
   .slideContent {
     padding: 1rem;
   }
-  
+
   .contentWrapper {
     margin-top: 80px;
   }
-  
-  .arrow {
-    width: 40px;
-    height: 40px;
-  }
-  
-  .arrowIcon {
-    font-size: 1.75rem;
-  }
-  
+
   .dot {
     width: 10px;
     height: 10px;
   }
-}
 
-
-
-@media (max-width: 600px) {
   .dotsContainer {
-    padding-left: 2rem;
-    justify-content: center;
-  }
-
-  .contentWrapper {
-    text-align: center;
-  }
-
-  .slideSubtitle {
-    max-width: 100%;
+    padding-right: 1.5rem;
   }
 }
 

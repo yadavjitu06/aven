@@ -42,9 +42,9 @@ const Navbar = () => {
           <div className={styles.logoContainer}>
             <Link href="/" className={styles.logo}>
               <Image
-                src="/aven.png" // public folder ke andar ka naam
+                src="/aven.png"
                 alt="Aven Logo"
-                width={120} // apne logo ke size ke hisaab se
+                width={120} 
                 height={40}
                 priority
               />

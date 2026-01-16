@@ -105,7 +105,7 @@ export default function Home() {
           </div>
 
           {/* Bottom Tabs */}
-          <nav className={styles.marketsNav}>
+          <section className={styles.marketsNav}>
             {markets.map((market) => (
               <li key={market.id} className={styles.marketItem}>
                 <button
@@ -132,7 +132,7 @@ export default function Home() {
                 </button>
               </li>
             ))}
-          </nav>
+          </section>
         </div>
       </section>
       <Footer />
