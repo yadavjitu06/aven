@@ -7,49 +7,49 @@ import Footer from "../components/Footer/Footer";
 
 export default function Home() {
   const [markets, setMarkets] = useState([
-  {
-    id: 1,
-    name: "Land Mobility",
-    active: true,
-    icon: "/marketImage/Tank1.png",
-  },
-  {
-    id: 2,
-    name: "Liquid Armour",
-    active: false,
-    icon: "/marketImage/Tank2.png",
-  },
-  {
-    id: 3,
-    name: "Aerospace",
-    active: false,
-    icon: "/marketImage/Tank3.png",
-  },
-  {
-    id: 4,
-    name: "Marine",
-    active: false,
-    icon: "/marketImage/Tank4.png",
-  },
-  {
-    id: 5,
-    name: "Healthcare",
-    active: false,
-    icon: "/marketImage/Tank5.png",
-  },
-  {
-    id: 6,
-    name: "Personal Protection",
-    active: false,
-    icon: "/marketImage/Tank6.png",
-  },
-  {
-    id: 7,
-    name: "Defence Supplies",
-    active: false,
-    icon: "/marketImage/Tank7.png",
-  },
-]);
+    {
+      id: 1,
+      name: "Land Mobility",
+      active: true,
+      icon: "/marketImage/Tank1.png",
+    },
+    {
+      id: 2,
+      name: "Liquid Armour",
+      active: false,
+      icon: "/marketImage/Tank2.png",
+    },
+    {
+      id: 3,
+      name: "Aerospace",
+      active: false,
+      icon: "/marketImage/Tank3.png",
+    },
+    {
+      id: 4,
+      name: "Marine",
+      active: false,
+      icon: "/marketImage/Tank4.png",
+    },
+    {
+      id: 5,
+      name: "Healthcare",
+      active: false,
+      icon: "/marketImage/Tank5.png",
+    },
+    {
+      id: 6,
+      name: "Personal Protection",
+      active: false,
+      icon: "/marketImage/Tank6.png",
+    },
+    {
+      id: 7,
+      name: "Defence Supplies",
+      active: false,
+      icon: "/marketImage/Tank7.png",
+    },
+  ]);
 
   const marketsData = {
     tag: "Markets We Serve",
@@ -69,13 +69,12 @@ export default function Home() {
 
       <section className={styles.marketsSection}>
         <div className={styles.container}>
-          {/* Header */}
-          <header className={styles.sectionHeader}>
-            <span className={styles.tag}>{marketsData.tag}</span>
-            <h2 className={styles.title}>{marketsData.title}</h2>
-          </header>
+         
 
           <div className={styles.marketsContent}>
+            <div  className={styles.textconatiner}>
+               <span className={styles.tag}>{marketsData.tag}</span>
+            <h2 className={styles.title}>{marketsData.title}</h2>
             {/* Left Text */}
             <div className={styles.descriptionColumn}>
               <p className={styles.descriptionText}>
@@ -91,16 +90,20 @@ export default function Home() {
                 </div>
               </div>
             </div>
+            </div>
 
             {/* Right Image */}
             <div className={styles.imageColumn}>
-              <Image
-                src={marketsData.image}
-                alt="Land Mobility Tank"
-                width={900}
-                height={500}
-                priority
-              />
+              <div className={styles.imageWrapper}>
+                <Image
+                  src={marketsData.image}
+                  alt="Land Mobility Tank"
+                  fill
+                  priority
+                 
+                  className={styles.responsiveImage}
+                />
+              </div>
             </div>
           </div>
 
@@ -119,8 +122,8 @@ export default function Home() {
                     <Image
                       src={market.icon}
                       alt={`${market.name} icon`}
-                      width={20}
-                      height={20}
+                      width={65}
+                      height={56}
                     />
                   </span>
 
@@ -135,7 +138,7 @@ export default function Home() {
           </section>
         </div>
       </section>
-      <Footer />
+      
     </>
   );
 }

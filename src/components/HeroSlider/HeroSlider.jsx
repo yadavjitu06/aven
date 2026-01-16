@@ -14,7 +14,7 @@ const HeroSlider = () => {
       image: '/images/slider/slide1.png',
       alt: 'Medical Team Collaboration',
       title: 'PASSIONATE ABOUT SAVING LIVES',
-      subtitle: 'Innovative solutions for healthcare challenges',
+      subtitle: 'Aven',
     },
     {
       id: 2,
@@ -76,10 +76,11 @@ const HeroSlider = () => {
             
             <div className={styles.slideContent}>
               <div className={styles.contentWrapper}>
-                <h1 className={styles.slideTitle}>{slide.title}</h1>
                 {slide.subtitle && (
                   <p className={styles.slideSubtitle}>{slide.subtitle}</p>
                 )}
+                <h1 className={styles.slideTitle}>{slide.title}</h1>
+                
               </div>
             </div>
           </div>
