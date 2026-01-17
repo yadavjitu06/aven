@@ -16,15 +16,22 @@ const HeroSlider = () => {
       title: 'PASSIONATE ABOUT SAVING LIVES',
       subtitle: 'Aven',
     },
-    {
+     {
       id: 2,
+      image: '/images/slider/slide1.png',
+      alt: 'Medical Team Collaboration',
+      title: 'PASSIONATE ABOUT SAVING LIVES',
+      subtitle: 'Aven',
+    },
+    {
+      id: 3,
       image: '/images/slider/slide2.png',
       alt: 'Healthcare Technology',
       title: 'ADVANCED MEDICAL TECHNOLOGIES',
       subtitle: 'Cutting-edge equipment and techniques',
     },
     {
-      id: 3,
+      id: 4,
       image: '/images/slider/slide3.png',
       alt: 'Patient Care Excellence',
       title: 'COMPASSIONATE PATIENT CARE',

@@ -24,8 +24,6 @@
   align-items: center;
 }
 
-
-
 .logo {
   width: 160px;
   height: auto;
@@ -47,7 +45,9 @@
   border: none;
   cursor: pointer;
   color: #ffffff;
-  transition: transform 0.2s ease, color 0.3s ease;
+  transition:
+    transform 0.2s ease,
+    color 0.3s ease;
   z-index: 1002;
 }
 
@@ -140,9 +140,6 @@
   }
 
   .container {
-    /* max-width: 1200px; *
-    /* margin: 0 auto; */
-
     padding: 0 187px;
 
     display: flex;
@@ -208,17 +205,3 @@
     padding: 20px 0;
   }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
