@@ -46,9 +46,9 @@
 .social span {
   display: inline-block;
   margin-right: 10px;
-  background: #444;
-  width: 28px;
-  height: 28px;
+  background: transparent 0% 0% no-repeat padding-box;
+  width:20px;
+  height:20px;
   text-align: center;
   line-height: 28px;
   border-radius: 3px;
@@ -145,4 +145,26 @@
     line-height: 26px;
     font-size: 11px;
   }
+}
+
+
+
+
+
+.social {
+  display: flex;
+  gap: 2px;
+  margin-top: 10px;
+}
+
+.socialIcon {
+  font-size: 10px;
+  color: #666;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.socialIcon:hover {
+  color: #cac3bf;
+  transform: translateY(-2px);
 }

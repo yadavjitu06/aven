@@ -1,18 +1,50 @@
+import {
+  FaFacebookF,
+  FaTwitter,
+  FaLinkedinIn,
+  FaYoutube,
+} from "react-icons/fa";
 import styles from "./Footer.module.css";
+const socialIconMap = {
+  facebook: <FaFacebookF />,
+  twitter: <FaTwitter />,
+  linkedin: <FaLinkedinIn />,
+  youtube: <FaYoutube />,
+};
 
 const footerData = {
   columns: [
     {
       title: "About Us",
-      links: ["Company Profile", "Leadership and Management", "Certificates & Approvals", "Global Foot Prints"],
+      links: [
+        "Company Profile",
+        "Leadership and Management",
+        "Certificates & Approvals",
+        "Global Foot Prints",
+      ],
     },
     {
       title: "Industry",
-      links: ["Liquid Armour", "Aerospace", "Health Care", "Marine", "Land Mobility", "Personal Protection", "Defence Supplies"],
+      links: [
+        "Liquid Armour",
+        "Aerospace",
+        "Health Care",
+        "Marine",
+        "Land Mobility",
+        "Personal Protection",
+        "Defence Supplies",
+      ],
     },
     {
       title: "Services",
-      links: ["Transactional", "Economical Analysis", "Strategic Communication", "Defence Systems", "Healthcare Consulting", "Technology Consulting"],
+      links: [
+        "Transactional",
+        "Economical Analysis",
+        "Strategic Communication",
+        "Defence Systems",
+        "Healthcare Consulting",
+        "Technology Consulting",
+      ],
     },
     {
       title: "Quick Links",
@@ -34,10 +66,8 @@ export default function Footer() {
         <div className={styles.grid}>
           {footerData.columns.map((col, i) => (
             <section key={i}>
-              {/* yahan class add karo */}
               <h4 className={styles.sectionTitle}>{col.title}</h4>
 
-              {/* yahan class add karo */}
               <ul className={styles.linkList}>
                 {col.links.map((link, idx) => (
                   <li key={idx} className={styles.linkItem}>
@@ -57,7 +87,9 @@ export default function Footer() {
               {col.social && (
                 <div className={styles.social}>
                   {col.social.map((icon, idx) => (
-                    <span key={idx}>{icon}</span>
+                    <span key={idx} className={styles.socialIcon}>
+                      {socialIconMap[icon]}
+                    </span>
                   ))}
                 </div>
               )}
