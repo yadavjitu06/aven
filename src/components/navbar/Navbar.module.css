@@ -1,5 +1,4 @@
 /* ================= MOBILE FIRST BASE ================= */
-
 .header {
   position: fixed;
   top: 0;
@@ -18,9 +17,9 @@
 
 .container {
   width: 100%;
-  padding: 0 1rem;
+ 
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
 }
 
@@ -51,53 +50,7 @@
   z-index: 1002;
 }
 
-.menuButton:active {
-  transform: scale(0.9);
-}
 
-/* Mobile Drawer */
-.mobileNav {
-  position: fixed;
-  top: 0;
-  right: -100%;
-  width: 80%;
-  max-width: 320px;
-  height: 100vh;
-  background: #ffffff;
-  z-index: 1001;
-  transition: right 0.35s ease;
-  box-shadow: -5px 0 25px rgba(0, 0, 0, 0.15);
-}
-
-.mobileNav.open {
-  right: 0;
-}
-
-.mobileNavContent {
-  padding: 5rem 1.5rem 2rem;
-  height: 100%;
-  overflow-y: auto;
-}
-
-.mobileNavList {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 1.25rem;
-}
-
-.mobileNavItem {
-  opacity: 0;
-  transform: translateX(20px);
-  transition: all 0.3s ease;
-}
-
-.mobileNav.open .mobileNavItem {
-  opacity: 1;
-  transform: translateX(0);
-}
 
 .mobileNavLink {
   text-decoration: none;
@@ -123,8 +76,27 @@
   z-index: 1000;
 }
 
-/* ================= TABLET & DESKTOP ================= */
 
+
+
+.mobileNav {
+  position: fixed;
+  top: 0;
+  right: -100%;    
+  width: 50%;
+  height: 100vh;
+  background: #fff;
+  transition: right 0.3s ease;
+  z-index: 1001;
+}
+
+
+.mobileNav.open {
+  right: 0;       
+}
+
+
+/* ================= TABLET & DESKTOP ================= */
 @media (min-width: 768px) {
   .desktopNav {
     display: block;
@@ -139,13 +111,7 @@
     display: none;
   }
 
-  .container {
-    padding: 0 187px;
-
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
+  
 
   .logo {
     width: 260px;
@@ -195,7 +161,6 @@
 }
 
 /* ================= LARGE DESKTOP ================= */
-
 @media (min-width: 1200px) {
   .logo {
     width: 300px;
