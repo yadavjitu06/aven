@@ -140,8 +140,14 @@
   }
 
   .container {
-    max-width: 1200px;
-    margin: 0 auto;
+    /* max-width: 1200px; *
+    /* margin: 0 auto; */
+
+    padding: 0 187px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
   }
 
   .logo {
