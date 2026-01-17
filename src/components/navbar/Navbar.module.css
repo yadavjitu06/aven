@@ -11,21 +11,37 @@
   transition: all 0.3s ease;
 }
 
+/* Add scrolled class styles for background change */
+.header.scrolled {
+  background: #000000 !important; /* Black background when scrolled */
+}
+
+.header.scrolled .navLink {
+  color: #ffffff !important; /* White text when scrolled */
+}
+
+.header.scrolled .menuButton {
+  color: #ffffff !important; /* White hamburger icon when scrolled */
+}
+
 .navbar {
   padding: 12px 0;
 }
 
 .container {
   width: 100%;
- 
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
 }
 
 .logo {
   width: 160px;
   height: auto;
+  transition: width 0.3s ease;
 }
 
 /* Desktop nav hidden on mobile */
@@ -36,6 +52,7 @@
 /* Hamburger Button */
 .menuButton {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   width: 44px;
@@ -44,19 +61,62 @@
   border: none;
   cursor: pointer;
   color: #ffffff;
-  transition:
-    transform 0.2s ease,
-    color 0.3s ease;
   z-index: 1002;
+  gap: 4px;
+  padding: 8px;
 }
 
+/* Hamburger lines */
+.menuLine {
+  width: 24px;
+  height: 2px;
+  background-color: currentColor;
+  transition: all 0.3s ease;
+  border-radius: 1px;
+}
 
+/* Active state for hamburger (X shape) */
+.menuButton.active .menuLine:nth-child(1) {
+  transform: rotate(45deg) translate(4px, 4px);
+}
 
+.menuButton.active .menuLine:nth-child(2) {
+  opacity: 0;
+}
+
+.menuButton.active .menuLine:nth-child(3) {
+  transform: rotate(-45deg) translate(4px, -4px);
+}
+
+/* Mobile Navigation */
+.mobileNav {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 280px;
+  height: 100vh;
+  background: #fff;
+  transition: right 0.4s ease-in-out;
+  z-index: 1001;
+  padding: 80px 30px 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+}
+
+.mobileNav.open {
+  right: 0;
+}
+
+/* Mobile Nav Links */
 .mobileNavLink {
   text-decoration: none;
   color: #333;
   font-weight: 500;
-  font-size: 1.1rem;
+  font-size: 1.2rem;
+  padding: 10px 0;
+  border-bottom: 1px solid #eee;
   transition: color 0.3s ease;
 }
 
@@ -74,27 +134,15 @@
   inset: 0;
   background: rgba(0, 0, 0, 0.5);
   z-index: 1000;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
 }
 
-
-
-
-.mobileNav {
-  position: fixed;
-  top: 0;
-  right: -100%;    
-  width: 50%;
-  height: 100vh;
-  background: #fff;
-  transition: right 0.3s ease;
-  z-index: 1001;
+.mobileOverlay.open {
+  opacity: 1;
+  visibility: visible;
 }
-
-
-.mobileNav.open {
-  right: 0;       
-}
-
 
 /* ================= TABLET & DESKTOP ================= */
 @media (min-width: 768px) {
@@ -108,19 +156,19 @@
 
   .mobileNav,
   .mobileOverlay {
-    display: none;
+    display: none !important;
   }
 
-  
-
   .logo {
-    width: 260px;
+    width: 200px;
   }
 
   .navList {
     display: flex;
     gap: 2.5rem;
     list-style: none;
+    margin: 0;
+    padding: 0;
   }
 
   .navItem {
@@ -137,7 +185,7 @@
   }
 
   .header.scrolled .navLink {
-    color: #555;
+    color: #ffffff; /* Changed from #555 to #ffffff for black background */
   }
 
   .navLink:hover {
@@ -163,7 +211,7 @@
 /* ================= LARGE DESKTOP ================= */
 @media (min-width: 1200px) {
   .logo {
-    width: 300px;
+    width: 260px;
   }
 
   .navbar {
